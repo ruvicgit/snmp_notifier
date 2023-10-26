@@ -79,7 +79,7 @@ func (trapSender TrapSender) SendAlertTraps(alertBucket types.AlertBucket) error
 
 	for _, connection := range connections {
 		for _, trap := range traps {
-			err = connection.V2Trap(trap)
+			err = connection.V2TrapWithBootsTime(trap, 1111, 2222)
 			if err != nil {
 				telemetry.SNMPErrorTotal.WithLabelValues().Inc()
 				return err
