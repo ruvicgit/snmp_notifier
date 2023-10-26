@@ -78,11 +78,9 @@ func (trapSender TrapSender) SendAlertTraps(alertBucket types.AlertBucket) error
 		}
 	}()
 
-	var epochTime string
-	epochTime = strconv.FormatInt(time.Now().Unix(), 10)
-	
-	eBoots = epochTime[0:4]
-	eTime = epochTime[5:9]
+	var epochTime = strconv.FormatInt(time.Now().Unix(), 10)
+	var eBoots = epochTime[0:4]
+	var eTime = epochTime[5:9]
 	
 	for _, connection := range connections {
 		for _, trap := range traps {
