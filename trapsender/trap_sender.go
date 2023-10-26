@@ -78,8 +78,8 @@ func (trapSender TrapSender) SendAlertTraps(alertBucket types.AlertBucket) error
 		}
 	}()
 
-	var eBoots string
-	var eTime string
+	var eBoots int
+	var eTime int
 	var err1 error
 	var err2 error
 	
