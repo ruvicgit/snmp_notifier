@@ -79,7 +79,8 @@ func (trapSender TrapSender) SendAlertTraps(alertBucket types.AlertBucket) error
 	}()
 
 	var epochTime string
-	epochTime = strconv.Itoa(time.Now().Unix())
+	epochTime = strconv.FormatInt(time.Now().Unix())
+	
 	//eBoots = 
 	//eTime = 
 	
