@@ -16,7 +16,6 @@ package trapsender
 import (
 	"strings"
 	"time"
-        "fmt"
         "strconv"
 	"github.com/maxwo/snmp_notifier/commons"
 	"github.com/maxwo/snmp_notifier/telemetry"
