@@ -13,11 +13,11 @@
 
 package trapsender
 
-import("time")
 import (
 	"strings"
 	"time"
-
+        "fmt"
+        "strconv"
 	"github.com/maxwo/snmp_notifier/commons"
 	"github.com/maxwo/snmp_notifier/telemetry"
 	"github.com/maxwo/snmp_notifier/types"
@@ -80,7 +80,7 @@ func (trapSender TrapSender) SendAlertTraps(alertBucket types.AlertBucket) error
 
 	for _, connection := range connections {
 		for _, trap := range traps {
-			err = connection.V2TrapWithBootsTime(trap, time.Now().Unix(), time.Now().Unix())
+			err = connection.V2TrapWithBootsTime(trap, strconv.Itoa((time.Now().Unix()), strconv.Itoa(time.Now().Unix()))
 			if err != nil {
 				telemetry.SNMPErrorTotal.WithLabelValues().Inc()
 				return err
