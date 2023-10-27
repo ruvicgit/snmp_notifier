@@ -80,7 +80,7 @@ func (trapSender TrapSender) SendAlertTraps(alertBucket types.AlertBucket) error
 	var eBoots int
 	var eTime int
 	var err1 error
-	var err2 error
+	//var err2 error
 	
 	var epochTime = strconv.FormatInt(time.Now().Unix(), 10)
 	
