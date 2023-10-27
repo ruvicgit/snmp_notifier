@@ -25,5 +25,3 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ruvicgit/snmp_notifier:2.0.2
       
-    - name: Docker Push
-      run: docker push ruvicgit/snmp_notifier:2.0.2
