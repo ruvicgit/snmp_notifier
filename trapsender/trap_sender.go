@@ -82,23 +82,9 @@ func (trapSender TrapSender) SendAlertTraps(alertBucket types.AlertBucket) error
 	
 	var epochTime = strconv.FormatInt(time.Now().Unix(), 10)
 	
-	//eBoots, err1 = strconv.Atoi(epochTime[0:4])
-	eBoots, err1 = strconv.Atoi(epochTime[4:9])
-	
-	if err1 != nil {
-	   eBoots = 0
-	} 
-
-	eTime = 0
-	
-	//eTime, err2 = strconv.Atoi(epochTime[5:9])
-	//if err2 != nil {
-	//   eTime = 0
-	//} 	
-	
 	for _, connection := range connections {
 		for _, trap := range traps {
-			err = connection.V2TrapWithBootsTime(trap, eBoots, eTime)
+			err = connection.V2TrapWithBootsTime(trap, epochTime, 0)
 			if err != nil {
 				telemetry.SNMPErrorTotal.WithLabelValues().Inc()
 				return err
