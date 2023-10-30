@@ -20,9 +20,7 @@ import (
 	"github.com/maxwo/snmp_notifier/commons"
 	"github.com/maxwo/snmp_notifier/telemetry"
 	"github.com/maxwo/snmp_notifier/types"
-
 	"text/template"
-
 	"github.com/k-sone/snmpgo"
 	"github.com/shirou/gopsutil/host"
 )
