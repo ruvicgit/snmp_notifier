@@ -104,7 +104,7 @@ func (httpServer HTTPServer) Configure() *http.Server {
 	mux.Handle("/metrics", promhttp.Handler())
 	mux.HandleFunc("/health", healthHandler)
 
-	level.Info(httpServer.logger).Log("msg", "Preparing v2.0.3 to listen", "address", httpServer.configuration.WebListenAddress)
+	level.Info(httpServer.logger).Log("msg", "Preparing v2.0.4 to listen", "address", httpServer.configuration.WebListenAddress)
 	return server
 }
 
